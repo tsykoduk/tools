@@ -1,0 +1,6 @@
+Slack Themes:
+Classic #79589f,#A996C0,#cfd7e6,#596981,#a996c0,#fbfbfd,#74c080,#d64242
+Muted Classic #2a0554,#c2afe0,#917da8,#F5F5F5,#6D4F8F,#F5F5F5,#a3d1aa,#3b2b4d
+Dark 333D47,#4E535A,#79589F,#ffffff,#596981,#FBFBFD,#7673C0,#408FEC 
+
+
