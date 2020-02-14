@@ -4,15 +4,12 @@
 # We will then parse the apps in the team(s) 
 # And ask you if you want to delete each one
 # We will skip locked apps, and delete apps from private spaces!
-# If you wish to not get prompted for each one (DANGEROUS), just comment out the `gets` loop
-
 
 apps = []
 
-
-#Put the target teams as elemts in this array
-teams_to_clean = ["team1", "team2"]
-
+#Put the target teams as elemts in this array i.e
+# ["team1"] for one team or ["team1", team2"] for two
+teams_to_clean = ["put a team name here"]
 
 for team in teams_to_clean do
   apps.push(*`heroku apps --team #{team}`.split(/\n+/).drop(1))
@@ -23,7 +20,10 @@ for app in apps
     puts "#{app} is a locked app, skipping"
   else
     puts "deleting app: #{app}, are you sure? (y/n)"
+    #if you want to skip the question, comment out the next line and uncomment out the one below
+    #this is dangerous, please only do this if you know what you are doing
     quest = gets
+    # quest = "y"
     if quest.chr == "y"
       puts "deleting app #{app}"
       a = app.split(" ")
