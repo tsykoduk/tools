@@ -23,16 +23,16 @@ for app in apps
     puts "#{app} is a locked app, skipping"
   else
     puts "deleting app: #{app}, are you sure? (y/n)"
-    # quest = gets
-    # if quest.chr == "y"
+    quest = gets
+    if quest.chr == "y"
       puts "deleting app #{app}"
       a = app.split(" ")
       `heroku destroy --app #{a[0]} --confirm #{a[0]}`
        puts "We just deleted app #{app}"
-       # else
-       #   puts "skipping app #{app}"
-       # end
+     else
+       puts "skipping app #{app}"
      end
+    end
 end
 
   
