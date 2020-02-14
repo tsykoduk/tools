@@ -3,11 +3,16 @@
 # In TEAMS_TO_CLEAN put an array of the team names that you wish to clean.
 # We will then parse the apps in the team(s) 
 # And ask you if you want to delete each one
+# We will skip locked apps, and delete apps from private spaces!
 # If you wish to not get prompted for each one (DANGEROUS), just comment out the `gets` loop
 
 
-teams_to_clean = "heroku-se-demo", "heroku-psa"
 apps = []
+
+
+#Put the target teams as elemts in this array
+teams_to_clean = ["team1", "team2"]
+
 
 for team in teams_to_clean do
   apps.push(*`heroku apps --team #{team}`.split(/\n+/).drop(1))
