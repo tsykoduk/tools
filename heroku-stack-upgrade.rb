@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 
-# In TEAMS_TO_CLEAN put an array of the team names that you wish to clean.
-# We will then parse the apps in the team(s) 
-# And ask you if you want to delete each one
-# We will skip locked apps, and delete apps from private spaces!
+# In Team to Upgrade put the team name you want to run the upgrader on.
+# We will attempt to stack upgrade the apps to `heroku-18`
+# If the app does not have a git repo in Heroku (i.e., installed via a button) it will fail.
+# In that case you will need to manaully cut a release to finish the upgrade process
 
 apps = []
 
 #Put the target teams as elemts in this array i.e
 # ["team1"] for one team or ["team1", team2"] for two
-teams_to_upgrade = ["heroku-se-demo"]
+teams_to_upgrade = ["MY COOL HEROKU TEAM THAT IS REAL"]
 
 teams_to_upgrade.each do |team|
   apps.push(*`heroku apps --team #{team}`.split(/\n+/).drop(1))
