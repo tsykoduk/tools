@@ -16,8 +16,8 @@ teams_to_upgrade.each do |team|
 end
 
 #Set up run env
-cur_folder = `pwd`
-Dir.chdir "/tmp/"
+#cur_folder = `pwd`
+#Dir.chdir "/tmp/"
 
 for b in apps
   a = b.split[0]
@@ -31,6 +31,7 @@ for b in apps
    `heroku git:clone -a #{a}`
        
    puts "Pulled the app down, let's create an empty push"
+   Dir.chdir "/tmp/temp_#{a}/#{a}"
    `git commit --allow-empty -m "Upgrading to heroku-18"`
    `git push heroku master`
        
@@ -40,4 +41,4 @@ for b in apps
        
 end
 
-Dir.chdir cur_folder
+#Dir.chdir cur_folder
