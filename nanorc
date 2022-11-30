@@ -1,0 +1,13 @@
+#Set up Syntax Highlighting
+include "/opt/homebrew/Cellar/nano/*/share/nano/*.nanorc"
+
+# Automatically indent a newly created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph).
+set autoindent
+
+#Use a tab size of number columns. The value of number must be greater than 0. The default value is 8.
+set tabsize 2
+
+#Convert each typed tab to spaces -- to the number of spaces that a tab at that position would take up.
+set tabstospaces
+
+
