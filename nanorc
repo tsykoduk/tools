@@ -1,13 +1,14 @@
-#Set up Syntax Highlighting
-include "/opt/homebrew/Cellar/nano/*/share/nano/*.nanorc"
+#My Nano Settings
 
-# Automatically indent a newly created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph).
-set autoindent
+set nohelp          # Disable the help information (CTRL+G to view the help screen).
+set softwrap        # Enable softwrap of lines.
+set tabsize 2       # Sets tab-to-spaces size to 4.
+set tabstospaces    # Converts TAB key press to spaces.
+set constantshow    # Displays useful information e.g. line number and position in the bottom bar.
+set casesensitive   # Case insensitive search.
+set autoindent      # A new line will have the same number of leading spaces as the previous one.
+set minibar         # Displays file name and other information in the bottom bar. Removes top bar.
 
-#Use a tab size of number columns. The value of number must be greater than 0. The default value is 8.
-set tabsize 2
+include "/opt/homebrew/share/nano/*.nanorc" # Enables syntax highlighting.
 
-#Convert each typed tab to spaces -- to the number of spaces that a tab at that position would take up.
-set tabstospaces
-
-
+set speller "aspell -x -c"         # Sets what spelling utility to use.
